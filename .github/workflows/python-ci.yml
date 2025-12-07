@@ -32,3 +32,8 @@ jobs:
         with:
           name: test-results
           path: .
+      - name: Run unit tests
+        run: |
+          mkdir -p reports
+          PYTHONPATH=. pytest --junitxml=reports/test-results.xml
+
